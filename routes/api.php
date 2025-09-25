@@ -18,3 +18,5 @@ Route::post('/save', [PostController::class, 'store'])->name('api.posts.store');
 // For fetching a post to edit
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('api.posts.show');
 
+Route::get('/posts', [PostController::class, 'findAllNameAndId'])->name('api.posts.findAllNameAndId');
+

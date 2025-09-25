@@ -36,7 +36,7 @@ class PostController extends Controller
             'post' => $post
         ], 201);
     }
-    
+
     // ADD THIS NEW METHOD FOR FETCHING
     public function show($id)
     {
@@ -52,5 +52,9 @@ class PostController extends Controller
         }
 
         return response()->json($post);
+    }
+    public function findAllNameAndId(){
+        $posts =  Post::select('id','title')->get();
+        return response()->json($posts);
     }
 }
